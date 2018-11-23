@@ -12,12 +12,17 @@ s = socket(AF_INET, SOCK_DGRAM)
 s.setsockopt(SOL_SOCKET,SO_BROADCAST, 1)
 
 while True:
-  s.sendto(bytes(data,"UTF-8"), ('<broadcast>', BROADCAST_TO_PORT))
+  print(sense.accell_raw)
+  time.sleep(1)
+
+
+#while True:
+  #s.sendto(bytes(data,"UTF-8"), ('<broadcast>', BROADCAST_TO_PORT))
   #acceleration = sense.get_accelerometer_raw()
-  print(sense.accel_raw)
+  #print(sense.accel_raw)
 
 	#print("x={0}, y={1}, z={2}".format(x, y, z))
-	time.sleep(1)
+	#time.sleep(1)
   
   
 
