@@ -52,7 +52,7 @@ while True:
 		sense.set_pixels(movedown)
 	
 	#print("x={0}, y={1}, z={2}".format(x, y, z))
-	data += ("x={0}, y={1}, z={2}".format(x, y, z))
+	#data += ("x={0}, y={1}, z={2}".format(x, y, z))
 	s.sendto(bytes(data,"UTF-8"), ('<broadcast>', BROADCAST_TO_PORT))
 	time.sleep(0)
 
