@@ -13,7 +13,7 @@ s = socket(AF_INET, SOCK_DGRAM)
 s.setsockopt(SOL_SOCKET,SO_BROADCAST, 1)
 
 while True:
-	acceleration = sense.get_accelerometer()
+	acceleration = sense.get_accelerometer_raw()
 	
 	x = acceleration['x']
 	y = acceleration['y']
