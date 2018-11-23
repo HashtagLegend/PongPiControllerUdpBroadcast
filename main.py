@@ -15,25 +15,23 @@ s.setsockopt(SOL_SOCKET,SO_BROADCAST, 1)
 r = (255,0,0)
 b = (0,0,255)
 
-def movedown:
-	maze = [[r,r,r,r,r,r,r,r],
-        	[r,r,r,r,r,r,r,r],
-        	[r,r,r,r,r,r,r,r],
-        	[r,r,r,r,r,r,r,r],
-        	[r,r,r,r,r,r,r,r],
-        	[r,r,r,r,r,r,r,r],
-        	[r,r,r,r,r,r,r,r],
-        	[r,r,r,r,r,r,r,r]]
+moveup = [[r,r,r,r,r,r,r,r],
+        [r,r,r,r,r,r,r,r],
+        [r,r,r,r,r,r,r,r],
+        [r,r,r,r,r,r,r,r],
+        [r,r,r,r,r,r,r,r],
+        [r,r,r,r,r,r,r,r],
+        [r,r,r,r,r,r,r,r],
+        [r,r,r,r,r,r,r,r]]
 
-def moveup:
-	maze = [[b,b,b,b,b,b,b,b],
-        	[b,b,b,b,b,b,b,b],
-        	[b,b,b,b,b,b,b,b],
-        	[b,b,b,b,b,b,b,b],
-        	[b,b,b,b,b,b,b,b],
-        	[b,b,b,b,b,b,b,b],
-        	[b,b,b,b,b,b,b,b],
-        	[b,b,b,b,b,b,b,b]]
+movedown = [[b,b,b,b,b,b,b,b],
+        [b,b,b,b,b,b,b,b],
+        [b,b,b,b,b,b,b,b],
+        [b,b,b,b,b,b,b,b],
+        [b,b,b,b,b,b,b,b],
+        [b,b,b,b,b,b,b,b],
+        [b,b,b,b,b,b,b,b],
+        [b,b,b,b,b,b,b,b]]
 
 while True:
 	acceleration = sense.get_accelerometer_raw()
@@ -47,11 +45,11 @@ while True:
 	if x > 0:
 		print("moving up")
 		data = "moving up"
-		moveup()
+		sense.set_pixels(moveup)
 	elif x < 0:
 		print("moving down")
 		data = "moving down"
-		movedown()
+		sense.set_pixels(movedown)
 	
 	#print("x={0}, y={1}, z={2}".format(x, y, z))
 	data += ("x={0}, y={1}, z={2}".format(x, y, z))
