@@ -15,23 +15,23 @@ s.setsockopt(SOL_SOCKET,SO_BROADCAST, 1)
 r = (255,0,0)
 b = (0,0,255)
 
-moveup = [[r,r,r,r,r,r,r,r],
-        [r,r,r,r,r,r,r,r],
-        [r,r,r,r,r,r,r,r],
-        [r,r,r,r,r,r,r,r],
-        [r,r,r,r,r,r,r,r],
-        [r,r,r,r,r,r,r,r],
-        [r,r,r,r,r,r,r,r],
-        [r,r,r,r,r,r,r,r]]
+moveup = [r,r,r,r,r,r,r,r,
+        r,r,r,r,r,r,r,r,
+        r,r,r,r,r,r,r,r,
+        r,r,r,r,r,r,r,r,
+        r,r,r,r,r,r,r,r,
+        r,r,r,r,r,r,r,r,
+        r,r,r,r,r,r,r,r,
+        r,r,r,r,r,r,r,r]
 
-movedown = [[b,b,b,b,b,b,b,b],
-        [b,b,b,b,b,b,b,b],
-        [b,b,b,b,b,b,b,b],
-        [b,b,b,b,b,b,b,b],
-        [b,b,b,b,b,b,b,b],
-        [b,b,b,b,b,b,b,b],
-        [b,b,b,b,b,b,b,b],
-        [b,b,b,b,b,b,b,b]]
+movedown = [b,b,b,b,b,b,b,b,
+        b,b,b,b,b,b,b,b,
+        b,b,b,b,b,b,b,b,
+        b,b,b,b,b,b,b,b,
+        b,b,b,b,b,b,b,b,
+        b,b,b,b,b,b,b,b,
+        b,b,b,b,b,b,b,b,
+        b,b,b,b,b,b,b,b]
 
 while True:
 	acceleration = sense.get_accelerometer_raw()
