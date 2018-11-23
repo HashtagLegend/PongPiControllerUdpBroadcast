@@ -42,6 +42,7 @@ while True:
 	x=round(x, 0)
 	y=round(y, 0)
 	z=round(z, 0)
+	data = "not moving"
 	if x > 0:
 		print("moving up")
 		data = "moving up"
