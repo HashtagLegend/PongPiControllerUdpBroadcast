@@ -14,6 +14,7 @@ s.setsockopt(SOL_SOCKET,SO_BROADCAST, 1)
 
 r = (255,0,0)
 b = (0,0,255)
+w = (0,0,0)
 
 moveup = [r,r,r,r,r,r,r,r,
         r,r,r,r,r,r,r,r,
@@ -33,6 +34,15 @@ movedown = [b,b,b,b,b,b,b,b,
         b,b,b,b,b,b,b,b,
         b,b,b,b,b,b,b,b]
 
+notmoving = [w,w,w,w,w,w,w,w,
+        w,w,w,w,w,w,w,w,
+        w,w,w,w,w,w,w,w,
+        w,w,w,w,w,w,w,w,
+        w,w,w,w,w,w,w,w,
+        w,w,w,w,w,w,w,w,
+        w,w,w,w,w,w,w,w,
+        w,w,w,w,w,w,w,w]
+
 while True:
 	acceleration = sense.get_accelerometer_raw()
 	
@@ -42,8 +52,12 @@ while True:
 	x=round(x, 0)
 	y=round(y, 0)
 	z=round(z, 0)
-	data = "not moving"
-	if x > 0:
+	
+	if x == 0:
+		print("not moving")
+		data = "not moving"
+		sense.set_pixels(notmoving)
+	elif x > 0:
 		print("moving up")
 		data = "moving up"
 		sense.set_pixels(moveup)
