@@ -12,6 +12,8 @@ s = socket(AF_INET, SOCK_DGRAM)
 
 s.setsockopt(SOL_SOCKET,SO_BROADCAST, 1)
 
+def function
+
 while True:
 	acceleration = sense.get_accelerometer_raw()
 	
@@ -23,11 +25,13 @@ while True:
 	z=round(z, 0)
 	if x > 0:
 		print("moving up")
+		data = "moving up"
 	elif x < 0:
 		print("moving down")
+		data = "moving down"
 	
 	#print("x={0}, y={1}, z={2}".format(x, y, z))
-	data = ("x={0}, y={1}, z={2}".format(x, y, z))
+	data += ("x={0}, y={1}, z={2}".format(x, y, z))
 	s.sendto(bytes(data,"UTF-8"), ('<broadcast>', BROADCAST_TO_PORT))
 	time.sleep(0)
 
