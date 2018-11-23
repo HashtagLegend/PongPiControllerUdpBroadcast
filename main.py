@@ -14,7 +14,7 @@ s.setsockopt(SOL_SOCKET,SO_BROADCAST, 1)
 
 
 
-#while True:
+while True:
     s.sendto(bytes(data,"UTF-8"), ('<broadcast>', BROADCAST_TO_PORT))
   	acceleration = sense.get_accelerometer_raw()
 	  x = acceleration['x']
