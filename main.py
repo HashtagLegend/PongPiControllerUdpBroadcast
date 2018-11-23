@@ -14,7 +14,7 @@ s.setsockopt(SOL_SOCKET,SO_BROADCAST, 1)
 
 r = (255,0,0)
 b = (0,0,255)
-w = (0,0,0)
+w = (255,255,255)
 
 moveup = [r,r,r,r,r,r,r,r,
         r,r,r,r,r,r,r,r,
