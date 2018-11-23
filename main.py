@@ -11,12 +11,9 @@ s = socket(AF_INET, SOCK_DGRAM)
 
 s.setsockopt(SOL_SOCKET,SO_BROADCAST, 1)
 
-
-
-
 while True:
-    s.sendto(bytes(data,"UTF-8"), ('<broadcast>', BROADCAST_TO_PORT))
-  	acceleration = sense.get_accelerometer_raw()
+  s.sendto(bytes(data,"UTF-8"), ('<broadcast>', BROADCAST_TO_PORT))
+  acceleration = sense.get_accelerometer_raw()
 	  x = acceleration['x']
 	  y = acceleration['y']
 	  z = acceleration['z']
@@ -26,6 +23,6 @@ while True:
 	  z=round(z, 0)
 
 	  print("x={0}, y={1}, z={2}".format(x, y, z))
-	  time.sleep(2)
+	time.sleep(2)
   
   
