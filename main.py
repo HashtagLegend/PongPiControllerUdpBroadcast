@@ -21,8 +21,13 @@ while True:
 	x=round(x, 0)
 	y=round(y, 0)
 	z=round(z, 0)
-	print("x={0}, y={1}, z={2}".format(x, y, z))
-	data = ("x={0}, y={1}, z={2}".format(x, y, z))
+	if x > 0:
+		print("moving up")
+	elif x < 0:
+		print("moving down")
+	
+	#print("x={0}, y={1}, z={2}".format(x, y, z))
+	#data = ("x={0}, y={1}, z={2}".format(x, y, z))
 	s.sendto(bytes(data,"UTF-8"), ('<broadcast>', BROADCAST_TO_PORT))
 	time.sleep(0)
 
